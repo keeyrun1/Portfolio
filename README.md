@@ -1,43 +1,37 @@
-# Portfolio
+# Kiran Kumar Pasupuleti
 
-A modern developer portfolio built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**. This repository contains the source for a responsive portfolio website with animated UI sections, interactive navigation, and polished visual styling.
+Welcome to the source for my personal portfolio website. This repository reflects my professional profile, experience, and the UI I use to introduce myself to visitors.
 
-## 🚀 Overview
+## 👋 About Me
 
-- Clean, component-driven architecture using `app/src/components` and `app/src/sections`
-- Landing page with Hero, About, Skills, Experience, Education, Certifications, and Footer sections
-- Animated visual effects using `gsap`, `lenis`, and custom canvas particles
-- Accessible UI built with Radix UI primitives and custom components
+I’m a frontend-focused developer who enjoys building polished, user-friendly web experiences. My portfolio highlights my skills, education, certifications, and professional journey.
 
-## 🧩 Tech Stack
+## 🌟 Profile
 
-- `react` / `react-dom`
-- `typescript`
-- `vite`
-- `tailwindcss`
-- `@radix-ui/react-*`
-- `lucide-react`
-- `gsap`
-- `react-router`
-- `recharts`
+- Passionate about clean UI design and modern web interactions
+- Focused on building responsive portfolio experiences for desktop and mobile
+- Interested in seamless navigation, animated interfaces, and accessible layouts
+- Committed to presenting work and background in a way that is easy to explore
 
-## 📁 Project Structure
+## 💼 What You’ll Find
 
-- `app/src/main.tsx` - App entry point
-- `app/src/App.tsx` - Root application layout
-- `app/src/pages/Home.tsx` - Home page content
-- `app/src/sections/` - Portfolio sections like `Hero`, `Skills`, `Experience`, `Education`, `Certifications`, and `Footer`
-- `app/src/components/` - Shared UI elements such as navigation and particle canvas
-- `app/components.json` and `app/README.md` - component metadata and toolkit docs
+This portfolio website showcases:
 
-## ⚡️ Features
+- Professional experience and career highlights
+- Technical skills and areas of expertise
+- Education and certification achievements
+- A polished landing experience with strong visual presentation
 
-- Responsive portfolio UI for desktop and mobile
-- Animated section transitions and modern layout effects
-- Skill visualizations and experience timeline
-- Clean component structure for easy updates and reuse
+## 📌 Why This Repo Exists
 
-## ▶️ Run Locally
+This repository contains the source code for the portfolio website so anyone visiting can review the UI, content structure, and how I present my profile.
+
+## 🔗 Repository Details
+
+- GitHub: `https://github.com/keeyrun1/Portfolio`
+- Source root: `app/`
+
+## ▶️ View Locally
 
 ```bash
 cd app
@@ -45,20 +39,8 @@ npm install
 npm run dev
 ```
 
-Open the local development URL shown in the terminal to preview the portfolio.
+Then open the local development URL shown in the terminal to see the portfolio in action.
 
-## 📦 Build for Production
+## ✉️ Contact
 
-```bash
-cd app
-npm run build
-```
-
-## 🔗 Source
-
-- Repository: `https://github.com/keeyrun1/Portfolio`
-- Source code root: `app/`
-
-## 💡 Notes
-
-The portfolio is designed to be both a strong developer showcase and a smooth UI experience, with modular section files and reusable UI components.
+The portfolio is designed to help visitors learn about me quickly and connect through the contact details available on the website.
