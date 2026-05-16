@@ -109,13 +109,16 @@ export default function About() {
         {/* Right Column */}
         <div ref={rightRef} className="lg:col-span-7">
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
-            Around <span className="text-[#D4A853] font-medium">13+ Years</span> of professional IT Experience (Offshore and onsite) in Analysis, Design, Development, Testing, and Implementation of Client/Server and Web-based N-tier architecture systems using Microsoft Technologies. Played a crucial role during the transition of our client merger over a period of 2 years and was awarded <span className="text-[#D4A853] font-medium">Most Trusted Partner</span> from Client.
+            Around <span className="text-[#D4A853] font-medium">13+ Years</span> of professional IT experience in analysis, design, development, testing, and implementation of client/server and web-based N-tier systems using Microsoft technologies. I also work as an AI-focused engineer, building task-specific agents for release readiness, operational automation, and intelligent tooling across enterprise processes.
           </p>
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
-            Developed .Net/C# based windows applications that connect to external restful APIs, DB2/SQL Server, Aerospike (NoSQL) database to monitor <span className="text-[#D4A853] font-medium">20 million+</span> real time customer data and generate automated business cases in Pega. Built multiple .Net Core applications to enhance operations by applying core business logic and assistance in production support.
+            Actively contributed to enterprise integration during mergers and acquisitions by aligning legacy systems into unified platforms, standardizing APIs, data contracts, and messaging schemas, and enabling smooth consolidation with minimal disruption.
+          </p>
+          <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
+            Designed and implemented data migration and system harmonization strategies across business-critical applications, while improving scalability, performance, and cloud optimization to deliver measurable cost savings and faster business consolidation.
           </p>
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8 }}>
-            Project Lead to remediate <span className="text-[#D4A853] font-medium">400+</span> application vulnerabilities and security flaws using Veracode and SonarQube to build maintainable, secure and robust applications. Expertise in developing User Controls and Custom Controls using C#, with experience in translating visual and written designs into efficient back-end libraries and Front-end Components.
+            Delivered reusable engineering frameworks, automation, and enterprise-grade solutions with a focus on .NET/C#, DB2, Aerospike, SQL, and modern cloud tooling to enhance productivity and support seamless integration of acquired companies into shared technology platforms.
           </p>
 
           {/* Stats */}

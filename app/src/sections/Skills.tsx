@@ -9,32 +9,32 @@ const SKILL_CATEGORIES = [
   {
     icon: Code2,
     name: 'Languages',
-    skills: ['C#.NET', 'ASP.NET', 'JavaScript', 'HTML', 'CSS', 'XML'],
+    skills: ['C#', '.NET', 'Python', 'TypeScript', 'JavaScript', 'SQL'],
   },
   {
     icon: Layers,
     name: 'Frameworks',
-    skills: ['.NET Core 2/3/6', '.NET Framework 4.0/4.6/5/6', 'ASP.NET MVC', 'Angular', 'React', 'jQuery', 'WCF'],
+    skills: ['.NET 7/8', 'ASP.NET Core', 'Entity Framework', 'ML.NET', 'React', 'Angular', 'WPF'],
   },
   {
     icon: Database,
     name: 'Databases',
-    skills: ['SQL Server 2016/2012/2008', 'DB2', 'Aerospike (NoSQL)'],
+    skills: ['SQL Server', 'DB2', 'Aerospike', 'PostgreSQL', 'Cosmos DB'],
   },
   {
     icon: Cloud,
     name: 'Cloud & DevOps',
-    skills: ['Microsoft Azure', 'PCF', 'IIS 5.0/6.0/7.0', 'Harness', 'IAAS'],
+    skills: ['Microsoft Azure', 'GitHub Actions', 'Docker', 'Kubernetes', 'PCF', 'Harness', 'Apache Kafka', 'IBM MQ'],
   },
   {
     icon: MessageSquare,
-    name: 'Messaging & Data',
-    skills: ['IBM MQ', 'Apache Kafka', 'RESTful APIs', 'Web Services', 'Web API'],
+    name: 'AI & Automation',
+    skills: ['AI Agents', 'Release Readiness', 'LLM Integration', 'Automation Workflows', 'Prompt Engineering'],
   },
   {
     icon: Wrench,
     name: 'Tools & Practices',
-    skills: ['GitHub', 'Bitbucket', 'TFS', 'Bamboo', 'JIRA', 'Confluence', 'Splunk', 'Veracode', 'SonarQube', 'SCRUM', 'Agile'],
+    skills: ['GitHub', 'GitHub Actions', 'GitHub Workflows', 'Bamboo', 'Jira', 'Azure DevOps', 'SonarQube', 'Veracode', 'Splunk', 'SCRUM', 'Agile'],
   },
 ];
 
@@ -52,6 +52,7 @@ export default function Skills() {
           opacity: 0,
           duration: 0.8,
           ease: 'power3.out',
+          immediateRender: false,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
@@ -69,6 +70,7 @@ export default function Skills() {
           duration: 0.8,
           ease: 'power3.out',
           stagger: 0.15,
+          immediateRender: false,
           scrollTrigger: {
             trigger: cardsRef.current,
             start: 'top 80%',
@@ -109,11 +111,22 @@ export default function Skills() {
               Technical Arsenal
             </h2>
             <p
-              className="font-body mb-16"
-              style={{ fontSize: '16px', color: '#94A3B8' }}
+              className="font-body mb-6"
+              style={{ fontSize: '16px', color: '#E2E8F0' }}
             >
-              Technologies and tools mastered over 13+ years of enterprise development
+              AI engineering, enterprise integration, release readiness automation, and modern .NET/C# stack experience across DB2, Aerospike, SQL, and cloud platforms.
             </p>
+            <div className="mb-14">
+              <p className="font-body mb-3" style={{ fontSize: '15px', color: '#CBD5E1' }}>
+                Key strengths included in this portfolio:
+              </p>
+              <ul className="list-disc ml-6 space-y-3" style={{ color: '#CBD5E1', fontSize: '15px' }}>
+                <li>Building AI agents for release readiness, automation, and enterprise workflows.</li>
+                <li>Standardizing integrations across legacy systems, APIs, and messaging platforms.</li>
+                <li>Driving CI/CD with GitHub Actions, GitHub Workflows, Bamboo, Docker, and Kubernetes.</li>
+                <li>Monitoring and operational insight with Splunk, Jira, Kafka, MQ, and cloud observability.</li>
+              </ul>
+            </div>
           </div>
 
           {/* Skills Grid */}
@@ -127,6 +140,7 @@ export default function Skills() {
                 <div
                   key={category.name}
                   className="glass-card p-8"
+                  style={{ minHeight: '220px', background: 'rgba(30, 41, 59, 0.92)', border: '1px solid rgba(212, 168, 83, 0.18)' }}
                 >
                   {/* Icon */}
                   <div

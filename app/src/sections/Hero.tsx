@@ -157,7 +157,7 @@ export default function Hero() {
             transform: 'translateY(20px)',
           }}
         >
-          13+ Years | Capital Markets | Full-Stack Architecture
+          I build AI-enabled enterprise platforms, release readiness automation, and cloud-integrated .NET systems that unify legacy architecture and accelerate business consolidation.
         </p>
 
         {/* Contact Row */}

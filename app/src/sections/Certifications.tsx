@@ -1,30 +1,45 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Trophy, TrendingUp, Cloud, Server } from 'lucide-react';
+import { Trophy, TrendingUp, Cloud } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CERTS = [
   {
     icon: Trophy,
-    title: 'Agile Scrum in Practice',
+    title: 'Associate Cloud Engineer',
+    issuer: 'Google Cloud',
+    issued: 'Jan 2024',
+    expires: 'Jan 2027',
+    credentialId: '91531373',
+  },
+  {
+    icon: Cloud,
+    title: 'Microsoft Certified: Azure Fundamentals',
+    issuer: 'Microsoft',
+    issued: 'Jun 2023',
+  },
+  {
+    icon: Trophy,
+    title: 'AZ-900: Microsoft Azure Fundamentals',
     issuer: 'Infosys',
+    issued: 'Mar 2023',
+    credentialId: 'OV5HKOIWPR',
   },
   {
     icon: TrendingUp,
     title: 'Financial Services Capital Markets',
     issuer: 'Infosys',
+    issued: 'Oct 2020',
+    credentialId: 'JGGRMJ009D',
   },
   {
-    icon: Cloud,
-    title: 'Microsoft Azure Fundamentals AZ-900',
-    issuer: 'Microsoft via Infosys',
-  },
-  {
-    icon: Server,
-    title: 'Google Associate Cloud Engineer',
-    issuer: 'Google',
+    icon: Trophy,
+    title: 'Agile Scrum in Practice',
+    issuer: 'Infosys',
+    issued: 'Sep 2018',
+    credentialId: '4DFEXJEW8F',
   },
 ];
 
@@ -42,6 +57,7 @@ export default function Certifications() {
           opacity: 0,
           duration: 0.8,
           ease: 'power3.out',
+          immediateRender: false,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 80%',
@@ -59,6 +75,7 @@ export default function Certifications() {
           duration: 0.7,
           ease: 'power2.out',
           stagger: 0.12,
+          immediateRender: false,
           scrollTrigger: {
             trigger: cardsRef.current,
             start: 'top 80%',
@@ -100,7 +117,7 @@ export default function Certifications() {
             </h2>
             <p
               className="font-body"
-              style={{ fontSize: '16px', color: '#94A3B8' }}
+              style={{ fontSize: '16px', color: '#FFFFFF' }}
             >
               Industry-recognized validations of expertise
             </p>
@@ -118,9 +135,11 @@ export default function Certifications() {
                   key={cert.title}
                   className="p-10 text-center transition-all duration-400"
                   style={{
-                    background: 'rgba(17, 24, 39, 0.6)',
-                    border: '1px solid rgba(45, 212, 191, 0.15)',
+                    background: 'rgba(30, 41, 59, 0.96)',
+                    border: '1px solid rgba(212, 168, 83, 0.25)',
                     borderRadius: '16px',
+                    boxShadow: '0 24px 70px rgba(0, 0, 0, 0.3)',
+                    minHeight: '240px',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = 'rgba(45, 212, 191, 0.4)';
@@ -136,16 +155,33 @@ export default function Certifications() {
                   </div>
                   <h3
                     className="font-body mt-5"
-                    style={{ fontSize: '18px', fontWeight: 600, color: '#F1F5F9' }}
+                    style={{ fontSize: '18px', fontWeight: 600, color: '#FFFFFF' }}
                   >
                     {cert.title}
                   </h3>
                   <p
                     className="font-body mt-2"
-                    style={{ fontSize: '14px', fontWeight: 400, color: '#94A3B8' }}
+                    style={{ fontSize: '14px', fontWeight: 400, color: '#CBD5E1' }}
                   >
                     {cert.issuer}
                   </p>
+                  {cert.issued ? (
+                    <p
+                      className="font-body mt-1"
+                      style={{ fontSize: '13px', color: '#CBD5E1' }}
+                    >
+                      Issued {cert.issued}
+                      {cert.expires ? ` · Expires ${cert.expires}` : ''}
+                    </p>
+                  ) : null}
+                  {cert.credentialId ? (
+                    <p
+                      className="font-body mt-1"
+                      style={{ fontSize: '13px', color: '#E2E8F0' }}
+                    >
+                      Credential ID: {cert.credentialId}
+                    </p>
+                  ) : null}
                 </div>
               );
             })}
