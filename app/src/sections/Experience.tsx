@@ -27,7 +27,7 @@ const EXPERIENCE_DATA = [
     id: 2,
     date: 'Dec 2011 — Nov 2016',
     role: 'Associate',
-    company: 'Maritz',
+    company: 'Cognizant Technology Solutions',
     location: 'Hyderabad, India',
     teamSize: '',
     responsibilities: [

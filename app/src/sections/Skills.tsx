@@ -9,7 +9,7 @@ const SKILL_CATEGORIES = [
   {
     icon: Code2,
     name: 'Languages',
-    skills: ['C#', '.NET', 'Python', 'TypeScript', 'JavaScript', 'SQL'],
+    skills: ['C#', '.NET', 'TypeScript', 'JavaScript', 'SQL'],
   },
   {
     icon: Layers,
@@ -19,7 +19,7 @@ const SKILL_CATEGORIES = [
   {
     icon: Database,
     name: 'Databases',
-    skills: ['SQL Server', 'DB2', 'Aerospike', 'PostgreSQL', 'Cosmos DB'],
+    skills: ['SQL Server', 'DB2', 'Aerospike'],
   },
   {
     icon: Cloud,
@@ -34,7 +34,7 @@ const SKILL_CATEGORIES = [
   {
     icon: Wrench,
     name: 'Tools & Practices',
-    skills: ['GitHub', 'GitHub Actions', 'GitHub Workflows', 'Bamboo', 'Jira', 'Azure DevOps', 'SonarQube', 'Veracode', 'Splunk', 'SCRUM', 'Agile'],
+    skills: ['GitHub', 'GitHub Actions', 'GitHub Workflows', 'Bamboo', 'Jira', 'SonarQube', 'Veracode', 'Splunk', 'SCRUM', 'Agile'],
   },
 ];
 

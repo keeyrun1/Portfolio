@@ -111,12 +111,20 @@ export default function Footer() {
                 KEEYRUN@outlook.com
               </a>
               <a
+                href="tel:+919030363881"
+                className="flex items-center gap-2 font-body transition-colors duration-300 hover:text-[#D4A853]"
+                style={{ fontSize: '14px', fontWeight: 400, color: '#94A3B8' }}
+              >
+                <Phone size={14} />
+                India: +91-9030363881
+              </a>
+              <a
                 href="tel:+15879693881"
                 className="flex items-center gap-2 font-body transition-colors duration-300 hover:text-[#D4A853]"
                 style={{ fontSize: '14px', fontWeight: 400, color: '#94A3B8' }}
               >
                 <Phone size={14} />
-                +1 587-969-3881
+                Canada: +1 587-969-3881
               </a>
             </div>
 

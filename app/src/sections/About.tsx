@@ -4,8 +4,23 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const getYearsExperience = (startDate: string) => {
+  const start = new Date(startDate);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  const hasNotReachedAnniversary =
+    now.getMonth() < start.getMonth() ||
+    (now.getMonth() === start.getMonth() && now.getDate() < start.getDate());
+  if (hasNotReachedAnniversary) {
+    years -= 1;
+  }
+  return Math.max(years, 0);
+};
+
+const YEARS_EXPERIENCE = getYearsExperience('2011-12-01');
+
 const STATS = [
-  { value: 13, suffix: '+', label: 'Years Exp.' },
+  { value: YEARS_EXPERIENCE, suffix: '+', label: 'Years Exp.' },
   { value: 2, suffix: '', label: 'Major Clients' },
   { value: 11, suffix: '', label: 'Apps Migrated' },
   { value: 400, suffix: '+', label: 'Vulns Fixed' },
@@ -109,7 +124,7 @@ export default function About() {
         {/* Right Column */}
         <div ref={rightRef} className="lg:col-span-7">
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
-            Around <span className="text-[#D4A853] font-medium">13+ Years</span> of professional IT experience in analysis, design, development, testing, and implementation of client/server and web-based N-tier systems using Microsoft technologies. I also work as an AI-focused engineer, building task-specific agents for release readiness, operational automation, and intelligent tooling across enterprise processes.
+            Around <span className="text-[#D4A853] font-medium">{YEARS_EXPERIENCE}+ Years</span> of professional IT experience in analysis, design, development, testing, and implementation of client/server and web-based N-tier systems using Microsoft technologies. I also work as an AI-focused engineer, building task-specific agents for release readiness, operational automation, and intelligent tooling across enterprise processes.
           </p>
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
             Actively contributed to enterprise integration during mergers and acquisitions by aligning legacy systems into unified platforms, standardizing APIs, data contracts, and messaging schemas, and enabling smooth consolidation with minimal disruption.
