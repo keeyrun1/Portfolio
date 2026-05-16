@@ -30,6 +30,8 @@ This repository contains the source code for the portfolio website so anyone vis
 
 - GitHub: `https://github.com/keeyrun1/Portfolio`
 - Source root: `app/`
+- Current release tag: `v1.0.0`
+- Commit: `fe022f2`
 
 ## ▶️ View Locally
 
