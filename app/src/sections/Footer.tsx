@@ -1,15 +1,30 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
+
+const DEFAULT_VIEW_COUNT = 15432;
+const STORAGE_KEY = 'portfolio_view_count';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Footer() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [viewCount, setViewCount] = useState<number>(() => {
+    if (typeof window === 'undefined') {
+      return DEFAULT_VIEW_COUNT;
+    }
+    const storedCount = Number(localStorage.getItem(STORAGE_KEY));
+    return Number.isInteger(storedCount) && storedCount > 0 ? storedCount : DEFAULT_VIEW_COUNT;
+  });
 
   useEffect(() => {
+    const storedCount = Number(localStorage.getItem(STORAGE_KEY));
+    const nextCount = Number.isInteger(storedCount) && storedCount > 0 ? storedCount + 1 : DEFAULT_VIEW_COUNT + 1;
+    localStorage.setItem(STORAGE_KEY, String(nextCount));
+    setViewCount(nextCount);
+
     const ctx = gsap.context(() => {
       if (contentRef.current) {
         gsap.from(contentRef.current.children, {
@@ -98,6 +113,14 @@ export default function Footer() {
               style={{ fontSize: '14px', fontWeight: 500, color: '#94A3B8' }}
             >
               Kiran Kumar Pasupuleti
+            </span>
+
+            {/* View Count */}
+            <span
+              className="font-body"
+              style={{ fontSize: '14px', fontWeight: 500, color: '#94A3B8' }}
+            >
+              Views: {viewCount.toLocaleString()}
             </span>
 
             {/* Contact Links */}
