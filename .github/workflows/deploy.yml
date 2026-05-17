@@ -13,15 +13,24 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Inject cache-busting token into HTML
+        run: |
+          SHA=${GITHUB_SHA::8}
+          # replace occurrences of .css" and .js" in HTML to add ?v=SHA
+          find . -type f -name "*.html" -exec sed -i '' -E "s/(\.css)\"/\\1?v=${SHA}\"/g" {} +
+          find . -type f -name "*.html" -exec sed -i '' -E "s/(\.js)\"/\\1?v=${SHA}\"/g" {} +
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PAT_TOKEN }}   # use PAT_TOKEN if branch protection requires it; otherwise use GITHUB_TOKEN
           publish_branch: gh-pages
           publish_dir: .
           force_orphan: true
