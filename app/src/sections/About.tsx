@@ -1,0 +1,168 @@
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const getYearsExperience = (startDate: string) => {
+  const start = new Date(startDate);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  const hasNotReachedAnniversary =
+    now.getMonth() < start.getMonth() ||
+    (now.getMonth() === start.getMonth() && now.getDate() < start.getDate());
+  if (hasNotReachedAnniversary) {
+    years -= 1;
+  }
+  return Math.max(years, 0);
+};
+
+const YEARS_EXPERIENCE = getYearsExperience('2011-12-01');
+
+const STATS = [
+  { value: YEARS_EXPERIENCE, suffix: '+', label: 'Years Exp.' },
+  { value: 2, suffix: '', label: 'Major Clients' },
+  { value: 11, suffix: '', label: 'Apps Migrated' },
+  { value: 400, suffix: '+', label: 'Vulns Fixed' },
+];
+
+export default function About() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const rightRef = useRef<HTMLDivElement>(null);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Left column entrance
+      if (leftRef.current) {
+        gsap.from(leftRef.current, {
+          x: -40,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        });
+      }
+
+      // Right column entrance
+      if (rightRef.current) {
+        gsap.from(rightRef.current, {
+          x: 40,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        });
+      }
+
+      // Stats counter animation
+      if (statsRef.current) {
+        const statElements = statsRef.current.querySelectorAll('.stat-number');
+        statElements.forEach((el) => {
+          const target = parseInt(el.getAttribute('data-value') || '0', 10);
+          const proxy = { value: 0 };
+          gsap.to(proxy, {
+            value: target,
+            duration: 2,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: statsRef.current,
+              start: 'top 75%',
+              toggleActions: 'play none none none',
+            },
+            onUpdate: () => {
+              el.textContent = Math.floor(proxy.value).toString();
+            },
+          });
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section
+      id="about"
+      ref={sectionRef}
+      className="relative"
+      style={{
+        zIndex: 1,
+        padding: '120px 0',
+        background: 'radial-gradient(ellipse at center, rgba(17, 24, 39, 0.95) 0%, rgba(11, 15, 26, 0.9) 100%)',
+      }}
+    >
+      <div
+        className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"
+        style={{ padding: '0 clamp(24px, 5vw, 64px)' }}
+      >
+        {/* Left Column */}
+        <div ref={leftRef} className="lg:col-span-5">
+          <span className="section-label">01 — ABOUT</span>
+          <h2
+            className="font-display font-bold mt-4"
+            style={{
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              lineHeight: 1.2,
+              color: '#F1F5F9',
+              letterSpacing: '-0.02em',
+            }}
+          >
+            Architecting Solutions That Scale
+          </h2>
+        </div>
+
+        {/* Right Column */}
+        <div ref={rightRef} className="lg:col-span-7">
+          <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
+            Around <span className="text-[#D4A853] font-medium">{YEARS_EXPERIENCE}+ Years</span> of professional IT experience in analysis, design, development, testing, and implementation of client/server and web-based N-tier systems using Microsoft technologies. I also work as an AI-focused engineer, building task-specific agents for release readiness, operational automation, and intelligent tooling across enterprise processes.
+          </p>
+          <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
+            Actively contributed to enterprise integration during mergers and acquisitions by aligning legacy systems into unified platforms, standardizing APIs, data contracts, and messaging schemas, and enabling smooth consolidation with minimal disruption.
+          </p>
+          <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
+            Designed and implemented data migration and system harmonization strategies across business-critical applications, while improving scalability, performance, and cloud optimization to deliver measurable cost savings and faster business consolidation.
+          </p>
+          <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8 }}>
+            Delivered reusable engineering frameworks, automation, and enterprise-grade solutions with a focus on .NET/C#, DB2, Aerospike, SQL, and modern cloud tooling to enhance productivity and support seamless integration of acquired companies into shared technology platforms.
+          </p>
+
+          {/* Stats */}
+          <div ref={statsRef} className="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-12">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="text-center sm:text-left">
+                <div className="flex items-baseline justify-center sm:justify-start">
+                  <span
+                    className="stat-number font-display"
+                    data-value={stat.value}
+                    style={{ fontSize: '36px', color: '#D4A853', fontWeight: 700, lineHeight: 1 }}
+                  >
+                    0
+                  </span>
+                  <span className="font-display" style={{ fontSize: '36px', color: '#D4A853', fontWeight: 700 }}>
+                    {stat.suffix}
+                  </span>
+                </div>
+                <span
+                  className="font-body block mt-1"
+                  style={{ fontSize: '12px', color: '#94A3B8', fontWeight: 400 }}
+                >
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
