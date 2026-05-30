@@ -29,7 +29,7 @@ const SKILL_CATEGORIES = [
   {
     icon: MessageSquare,
     name: 'AI & Automation',
-    skills: ['AI Agents', 'Release Readiness', 'LLM Integration', 'Automation Workflows', 'Prompt Engineering'],
+    skills: ['AI Agents', 'LLM Integration', 'Automation Workflows', 'Prompt Engineering'],
   },
   {
     icon: Wrench,
@@ -114,14 +114,14 @@ export default function Skills() {
               className="font-body mb-6"
               style={{ fontSize: '16px', color: '#E2E8F0' }}
             >
-              AI engineering, enterprise integration, release readiness automation, and modern .NET/C# stack experience across DB2, Aerospike, SQL, and cloud platforms.
+              AI engineering, enterprise integration and modern .NET/C# stack experience across DB2, Aerospike, SQL, and cloud platforms.
             </p>
             <div className="mb-14">
               <p className="font-body mb-3" style={{ fontSize: '15px', color: '#CBD5E1' }}>
                 Key strengths included in this portfolio:
               </p>
               <ul className="list-disc ml-6 space-y-3" style={{ color: '#CBD5E1', fontSize: '15px' }}>
-                <li>Building AI agents for release readiness, automation, and enterprise workflows.</li>
+                <li>Building AI agents, skill for automation and enterprise workflows.</li>
                 <li>Standardizing integrations across legacy systems, APIs, and messaging platforms.</li>
                 <li>Driving CI/CD with GitHub Actions, GitHub Workflows, Bamboo, Docker, and Kubernetes.</li>
                 <li>Monitoring and operational insight with Splunk, Jira, Kafka, MQ, and cloud observability.</li>

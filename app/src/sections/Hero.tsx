@@ -157,7 +157,7 @@ export default function Hero() {
             transform: 'translateY(20px)',
           }}
         >
-          I build AI-enabled enterprise platforms, release readiness automation, and cloud-integrated .NET systems that unify legacy architecture and accelerate business consolidation.
+          I build AI-enabled enterprise platforms and cloud-integrated .NET systems that unify legacy architecture and accelerate business consolidation.
         </p>
 
         {/* Contact Row */}

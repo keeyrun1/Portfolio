@@ -23,7 +23,6 @@ const STATS = [
   { value: YEARS_EXPERIENCE, suffix: '+', label: 'Years Exp.' },
   { value: 2, suffix: '', label: 'Major Clients' },
   { value: 11, suffix: '', label: 'Apps Migrated' },
-  { value: 400, suffix: '+', label: 'Vulns Fixed' },
 ];
 
 export default function About() {
@@ -124,16 +123,16 @@ export default function About() {
         {/* Right Column */}
         <div ref={rightRef} className="lg:col-span-7">
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
-            Around <span className="text-[#D4A853] font-medium">{YEARS_EXPERIENCE}+ Years</span> of professional IT experience in analysis, design, development, testing, and implementation of client/server and web-based N-tier systems using Microsoft technologies. I also work as an AI-focused engineer, building task-specific agents for release readiness, operational automation, and intelligent tooling across enterprise processes.
+            Kiran Kumar Pasupuleti is an AI Automation Engineer, Technology Lead, and aspiring Engineering Manager with over <span className="text-[#D4A853] font-medium">{YEARS_EXPERIENCE}+ years</span> of experience delivering enterprise-grade software solutions across design, development, modernization, and production support. His background is rooted in Microsoft technologies, with strong expertise in C#, .NET, .NET Core, ASP.NET, Web API, SQL Server, Azure, and enterprise integration platforms, along with experience building scalable systems that support demanding business environments
           </p>
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
-            Actively contributed to enterprise integration during mergers and acquisitions by aligning legacy systems into unified platforms, standardizing APIs, data contracts, and messaging schemas, and enabling smooth consolidation with minimal disruption.
+          Over the course of his career, he has worked on client/server and web-based N-tier applications, led teams across offshore and onsite models, and contributed to full software delivery lifecycles from requirement analysis through implementation and support. He has played a key role in large-scale initiatives including client merger transitions, migration of 11 applications to on-premises IAAS infrastructure, remediation of security vulnerabilities, and development of systems that process and monitor over 40 million real-time customer records
           </p>
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8, marginBottom: '20px' }}>
-            Designed and implemented data migration and system harmonization strategies across business-critical applications, while improving scalability, performance, and cloud optimization to deliver measurable cost savings and faster business consolidation.
+          My experience in capital markets, trading risk, and mutual funds has helped build a strong understanding of business-critical systems where stability, performance, and accuracy matter deeply. In these environments, he has built .NET Core applications, real-time APIs, internal web platforms, Splunk dashboards, and automation-driven solutions that improve operational efficiency and support smarter business decisions
           </p>
           <p className="font-body text-base leading-relaxed" style={{ color: '#94A3B8', lineHeight: 1.8 }}>
-            Delivered reusable engineering frameworks, automation, and enterprise-grade solutions with a focus on .NET/C#, DB2, Aerospike, SQL, and modern cloud tooling to enhance productivity and support seamless integration of acquired companies into shared technology platforms.
+          Alongside hands-on engineering, he has developed a strong leadership style centered on ownership, collaboration, and a client-first mindset. He has led code reviews, supported backlog grooming and Agile ceremonies, resolved technical issues across teams, and worked closely with business and delivery stakeholders to turn complex requirements into practical, maintainable solutions. What defines his work is a focus on smart execution: building systems that are not only functional, but secure, scalable, and efficient. He is especially interested in applying AI and automation to reduce repetitive work, improve engineering productivity, and help organizations modernize how they build and operate technology. Today, he is focused on opportunities where he can combine enterprise engineering experience with AI-driven automation, technical leadership, and people management to create meaningful business impact through practical innovation.
           </p>
 
           {/* Stats */}
