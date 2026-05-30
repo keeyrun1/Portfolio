@@ -108,7 +108,7 @@ export default function Skills() {
                 letterSpacing: '-0.02em',
               }}
             >
-              Technical Arsenal
+              Strategic Expertise
             </h2>
             <p
               className="font-body mb-6"
