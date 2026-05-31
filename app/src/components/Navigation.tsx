@@ -63,7 +63,7 @@ export default function Navigation() {
           className="font-mono text-sm tracking-[0.1em] text-[#D4A853] hover:text-[#E5B86A] transition-colors duration-300"
           style={{ fontWeight: 500 }}
         >
-          KIRAN.KP
+          KIRAN P 
         </a>
 
         {/* Desktop Nav */}
