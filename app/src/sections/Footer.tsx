@@ -115,13 +115,7 @@ export default function Footer() {
               Kiran Kumar Pasupuleti
             </span>
 
-            {/* View Count */}
-            <span
-              className="font-body"
-              style={{ fontSize: '14px', fontWeight: 500, color: '#94A3B8' }}
-            >
-              Views: {viewCount.toLocaleString()}
-            </span>
+            
 
             {/* Contact Links */}
             <div className="flex items-center gap-6">
